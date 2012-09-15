@@ -55,6 +55,6 @@ void main();
 // Created by Riotnrrd for ALFA 4/2012
 void main() {
 // Goblin Patrol: 1d6+3 goblins, 1 2nd level goblin fighter
-	ACR_SpawnGroup("goblin_gang");
+	ACR_SpawnGroup("alfa_goblin_gang");
 	ACR_SpawnObject("abr_cr_hu_goblin_ftr_2", OBJECT_TYPE_CREATURE);
 }

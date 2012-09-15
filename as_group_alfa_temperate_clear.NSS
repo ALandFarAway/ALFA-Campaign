@@ -89,19 +89,19 @@ void main() {
 				for (i = 0; i < nBirds; i++) ACR_SpawnObject("abr_cr_an_bird", OBJECT_TYPE_CREATURE);
 			}
 		}
-		else if (nRoll <= 20) ACR_SpawnGroup("militia");
-		else if (nRoll <= 30) ACR_SpawnGroup("patrol");
-		else if (nRoll <= 39) ACR_SpawnGroup("bandits");
+		else if (nRoll <= 20) ACR_SpawnGroup("alfa_militia");
+		else if (nRoll <= 30) ACR_SpawnGroup("alfa_patrol");
+		else if (nRoll <= 39) ACR_SpawnGroup("alfa_bandits");
 		else if (nRoll <= 43)	//4% Dire Rats 1d4
 		{
 			int nRats = d4();
 			for (i = 0; i < nRats; i++) ACR_SpawnObject("abr_cr_an_direrat", OBJECT_TYPE_CREATURE);
 		}
 		else if (nRoll <= 47) ACR_SpawnObject("abr_cr_mh_gargoyle", OBJECT_TYPE_CREATURE);
-		else if (nRoll <= 52) ACR_SpawnGroup("gnolls");
-		else if (nRoll <= 57) ACR_SpawnGroup("kobold_gang");
-		else if (nRoll <= 67) ACR_SpawnGroup("adventurers");
-		else if (nRoll <= 78) ACR_SpawnGroup("merchants");
+		else if (nRoll <= 52) ACR_SpawnGroup("alfa_gnolls");
+		else if (nRoll <= 57) ACR_SpawnGroup("alfa_kobold_gang");
+		else if (nRoll <= 67) ACR_SpawnGroup("alfa_adventurers");
+		else if (nRoll <= 78) ACR_SpawnGroup("alfa_merchants");
 		else if (nRoll <= 82)
 		{
 			int nLeopards = d2();
@@ -144,9 +144,9 @@ void main() {
 				for (i = 0; i < nBirds; i++) ACR_SpawnObject("abr_cr_an_bird", OBJECT_TYPE_CREATURE);
 			}
 		}
-		else if (nRoll <= 12) ACR_SpawnGroup("militia");
-		else if (nRoll <= 17) ACR_SpawnGroup("patrol");
-		else if (nRoll <= 23) ACR_SpawnGroup("bandit_gang");
+		else if (nRoll <= 12) ACR_SpawnGroup("alfa_militia");
+		else if (nRoll <= 17) ACR_SpawnGroup("alfa_patrol");
+		else if (nRoll <= 23) ACR_SpawnGroup("alfa_bandit_gang");
 		else if (nRoll <= 25) ACR_SpawnObject("abr_cr_un_baneguard", OBJECT_TYPE_CREATURE);
 		else if (nRoll <= 29)
 		{
@@ -156,15 +156,15 @@ void main() {
 		else if (nRoll <= 31) ACR_SpawnObject("abr_cr_un_dreadwarrior", OBJECT_TYPE_CREATURE);
 		else if (nRoll <= 33) ACR_SpawnObject("abr_cr_mh_gargoyle", OBJECT_TYPE_CREATURE);
 		else if (nRoll <= 37) ACR_SpawnObject("abr_cr_un_ghast", OBJECT_TYPE_CREATURE);
-		else if (nRoll <= 39) ACR_SpawnGroup("ghoul_gang");
-		else if (nRoll <= 41) ACR_SpawnGroup("gnolls");
-		else if (nRoll <= 46) ACR_SpawnGroup("goblin_patrol");
+		else if (nRoll <= 39) ACR_SpawnGroup("alfa_ghoul_gang");
+		else if (nRoll <= 41) ACR_SpawnGroup("alfa_gnolls");
+		else if (nRoll <= 46) ACR_SpawnGroup("alfa_goblin_patrol");
 		else if (nRoll <= 48) ACR_SpawnObject("abr_cr_ou_hellhound", OBJECT_TYPE_CREATURE);
-		else if (nRoll <= 53) ACR_SpawnGroup("kobold_gang");
-		else if (nRoll <= 61) ACR_SpawnGroup("adventurers");
-		else if (nRoll <= 66 )ACR_SpawnGroup("ogres");
-		else if (nRoll <= 75) ACR_SpawnGroup("orc_gang");
-		else if (nRoll <= 79) ACR_SpawnGroup("skeletons");
+		else if (nRoll <= 53) ACR_SpawnGroup("alfa_kobold_gang");
+		else if (nRoll <= 61) ACR_SpawnGroup("alfa_adventurers");
+		else if (nRoll <= 66 )ACR_SpawnGroup("alfa_ogres");
+		else if (nRoll <= 75) ACR_SpawnGroup("alfa_orc_gang");
+		else if (nRoll <= 79) ACR_SpawnGroup("alfa_skeletons");
 		//	2% Leopards 1d2
 		else if (nRoll <= 81)
 		{
@@ -179,7 +179,7 @@ void main() {
 		}
 		//	5% Werewolf 1
 		else if (nRoll <= 88) ACR_SpawnObject("abr_cr_ly_werewolf", OBJECT_TYPE_CREATURE);
-		else if (nRoll <= 90) ACR_SpawnGroup("wights");
+		else if (nRoll <= 90) ACR_SpawnGroup("alfa_wights");
 		//	4% Wolf 1d4
 		else if (nRoll <= 94)
 		{

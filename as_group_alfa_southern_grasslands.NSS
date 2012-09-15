@@ -74,25 +74,25 @@ void main() {
 	{
 		if (nRoll <= 1) ACR_SpawnObject("abr_cr_mh_annis", OBJECT_TYPE_CREATURE);
 		else if (nRoll <= 4) ACR_SpawnObject("abr_cr_mb_basilisk", OBJECT_TYPE_CREATURE);
-		else if (nRoll <= 7) ACR_SpawnGroup("barghest_pack");
-		else if (nRoll <= 10) ACR_SpawnGroup("cheetah_family");
-		else if (nRoll <= 14) ACR_SpawnGroup("dire_rat_pack");
+		else if (nRoll <= 7) ACR_SpawnGroup("alfa_barghest_pack");
+		else if (nRoll <= 10) ACR_SpawnGroup("alfa_cheetah_family");
+		else if (nRoll <= 14) ACR_SpawnGroup("alfa_dire_rat_pack");
 		else if (nRoll <= 22) ACR_SpawnObject("", OBJECT_TYPE_CREATURE); // NEED TO CREATE
-		else if (nRoll <= 25) ACR_SpawnGroup("gargoyles");
-		else if (nRoll <= 29) ACR_SpawnGroup("gnoll_hunters");
-		else if (nRoll <= 33) ACR_SpawnGroup("goblin_patrol");
-		else if (nRoll <= 37) ACR_SpawnGroup("goblin_raiders");
+		else if (nRoll <= 25) ACR_SpawnGroup("alfa_gargoyles");
+		else if (nRoll <= 29) ACR_SpawnGroup("alfa_gnoll_hunters");
+		else if (nRoll <= 33) ACR_SpawnGroup("alfa_goblin_patrol");
+		else if (nRoll <= 37) ACR_SpawnGroup("alfa_goblin_raiders");
 		else if (nRoll <= 38) ACR_SpawnObject("abr_cr_mh_greenhag", OBJECT_TYPE_CREATURE);
-		else if (nRoll <= 43) ACR_SpawnGroup("halfling_scouts");
-		else if (nRoll <= 46) ACR_SpawnGroup("hellhounds");
-		else if (nRoll <= 49) ACR_SpawnGroup("hobgoblin_raiders");
-		else if (nRoll <= 56) ACR_SpawnGroup("lions");
-		else if (nRoll <= 67) ACR_SpawnGroup("adventurers");
-		else if (nRoll <= 81) ACR_SpawnGroup("nomads"); // NEED TO CREATE nomads
-		else if (nRoll <= 85) ACR_SpawnGroup("ogre_gang");
-		else if (nRoll <= 89) ACR_SpawnGroup("orc_patrol");
-		else if (nRoll <= 92) ACR_SpawnGroup(""); //NEED TO CREATE trolls
-		else ACR_SpawnGroup("wolf_pack");
+		else if (nRoll <= 43) ACR_SpawnGroup("alfa_halfling_scouts");
+		else if (nRoll <= 46) ACR_SpawnGroup("alfa_hellhounds");
+		else if (nRoll <= 49) ACR_SpawnGroup("alfa_hobgoblin_raiders");
+		else if (nRoll <= 56) ACR_SpawnGroup("alfa_lions");
+		else if (nRoll <= 67) ACR_SpawnGroup("alfa_adventurers");
+		else if (nRoll <= 81) ACR_SpawnGroup("alfa_nomads"); // NEED TO CREATE nomads
+		else if (nRoll <= 85) ACR_SpawnGroup("alfa_ogre_gang");
+		else if (nRoll <= 89) ACR_SpawnGroup("alfa_orc_patrol");
+		else if (nRoll <= 92) ACR_SpawnGroup("alfa_"); //NEED TO CREATE trolls
+		else ACR_SpawnGroup("alfa_wolf_pack");
 	}
 	else	// Is night
 	{
@@ -135,35 +135,35 @@ zombie 2
 		if (nRoll <= 3) ACR_SpawnObject("", OBJECT_TYPE_CREATURE); // NEED TO CREATE
 		else if (nRoll <= 6) ACR_SpawnObject("abr_cr_mh_annis", OBJECT_TYPE_CREATURE);
 		else if (nRoll <= 6) ACR_SpawnObject("abr_cr_un_baneguard", OBJECT_TYPE_CREATURE);
-		else if (nRoll <= 6) ACR_SpawnGroup("barghest_pack");
-		else if (nRoll <= 6) ACR_SpawnGroup("cheetah_family");
+		else if (nRoll <= 6) ACR_SpawnGroup("alfa_barghest_pack");
+		else if (nRoll <= 6) ACR_SpawnGroup("alfa_cheetah_family");
 		else if (nRoll <= 6) ACR_SpawnObject("", OBJECT_TYPE_CREATURE); // NEED TO CREATE
-		else if (nRoll <= 6) ACR_SpawnGroup("dire_rat_pack");
-		else if (nRoll <= 6) ACR_SpawnGroup(""); // NEED TO CREATE
-		else if (nRoll <= 6) ACR_SpawnGroup("gargoyles");
-		else if (nRoll <= 6) ACR_SpawnGroup("ghast_gang");
-		else if (nRoll <= 6) ACR_SpawnGroup("ghoul_gang");
-		else if (nRoll <= 6) ACR_SpawnGroup("gnoll_hunters");
-		else if (nRoll <= 6) ACR_SpawnGroup("goblin_patrol");
-		else if (nRoll <= 6) ACR_SpawnGroup("goblin_raiders");
+		else if (nRoll <= 6) ACR_SpawnGroup("alfa_dire_rat_pack");
+		else if (nRoll <= 6) ACR_SpawnGroup("alfa_"); // NEED TO CREATE
+		else if (nRoll <= 6) ACR_SpawnGroup("alfa_gargoyles");
+		else if (nRoll <= 6) ACR_SpawnGroup("alfa_ghast_gang");
+		else if (nRoll <= 6) ACR_SpawnGroup("alfa_ghoul_gang");
+		else if (nRoll <= 6) ACR_SpawnGroup("alfa_gnoll_hunters");
+		else if (nRoll <= 6) ACR_SpawnGroup("alfa_goblin_patrol");
+		else if (nRoll <= 6) ACR_SpawnGroup("alfa_goblin_raiders");
 		else if (nRoll <= 6) ACR_SpawnObject("abr_cr_mh_greenhag", OBJECT_TYPE_CREATURE);
-		else if (nRoll <= 6) ACR_SpawnGroup("halfling_scouts");
-		else if (nRoll <= 6) ACR_SpawnGroup("hellhounds");
-		else if (nRoll <= 6) ACR_SpawnGroup("hobgoblin_raiders");
-		else if (nRoll <= 6) ACR_SpawnGroup("lions");
-		else if (nRoll <= 6) ACR_SpawnGroup("adventurers");
+		else if (nRoll <= 6) ACR_SpawnGroup("alfa_halfling_scouts");
+		else if (nRoll <= 6) ACR_SpawnGroup("alfa_hellhounds");
+		else if (nRoll <= 6) ACR_SpawnGroup("alfa_hobgoblin_raiders");
+		else if (nRoll <= 6) ACR_SpawnGroup("alfa_lions");
+		else if (nRoll <= 6) ACR_SpawnGroup("alfa_adventurers");
 		else if (nRoll <= 6) ACR_SpawnObject("", OBJECT_TYPE_CREATURE); // NEED TO CREATE
-		else if (nRoll <= 6) ACR_SpawnGroup("");// NEED TO CREATE
-		else if (nRoll <= 6) ACR_SpawnGroup("ogre_gang");
-		else if (nRoll <= 6) ACR_SpawnGroup("orc_patrol");
-		else if (nRoll <= 6) ACR_SpawnGroup("shadow_gang");
+		else if (nRoll <= 6) ACR_SpawnGroup("alfa_");// NEED TO CREATE
+		else if (nRoll <= 6) ACR_SpawnGroup("alfa_ogre_gang");
+		else if (nRoll <= 6) ACR_SpawnGroup("alfa_orc_patrol");
+		else if (nRoll <= 6) ACR_SpawnGroup("alfa_shadow_gang");
 		else if (nRoll <= 6) ACR_SpawnObject("abr_cr_ou_shadowmastiff", OBJECT_TYPE_CREATURE);
 		else if (nRoll <= 6) ACR_SpawnObject("", OBJECT_TYPE_CREATURE); // NEED TO CREATE
 		else if (nRoll <= 6) ACR_SpawnObject("", OBJECT_TYPE_CREATURE); // NEED TO CREATE
 		else if (nRoll <= 6) ACR_SpawnObject("abr_cr_un_vampirespawn", OBJECT_TYPE_CREATURE);
-		else if (nRoll <= 6) ACR_SpawnGroup("wight_gang");
-		else if (nRoll <= 6) ACR_SpawnGroup("wolf_pack");
+		else if (nRoll <= 6) ACR_SpawnGroup("alfa_wight_gang");
+		else if (nRoll <= 6) ACR_SpawnGroup("alfa_wolf_pack");
 		else if (nRoll <= 6) ACR_SpawnObject("abr_cr_un_wraith", OBJECT_TYPE_CREATURE);
-		else ACR_SpawnGroup("zombies");
+		else ACR_SpawnGroup("alfa_zombies");
 	}
 }

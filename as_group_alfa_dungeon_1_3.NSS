@@ -49,28 +49,28 @@ quaggoth: 1
 	int nRoll = d100();
 	int i;
 	
-	if (nRoll <= 4) ACR_SpawnGroup("dire_rats");
-	else if (nRoll <= 8) ACR_SpawnGroup("fire_beetle_cluster");
-	else if (nRoll <= 12) ACR_SpawnGroup("spider_colony_small");
-	else if (nRoll <= 16) ACR_SpawnGroup("dwarf_team");
-	else if (nRoll <= 20) ACR_SpawnGroup("elf_squad");
-	else if (nRoll <= 24) ACR_SpawnGroup("goblin_gang");
-	else if (nRoll <= 28) ACR_SpawnGroup("kobold_gang");
-	else if (nRoll <= 32) ACR_SpawnGroup("skeletons");
-	else if (nRoll <= 36) ACR_SpawnGroup("zombies");
-	else if (nRoll <= 40) ACR_SpawnGroup("hobgoblin_gang");
-	else if (nRoll <= 44) ACR_SpawnGroup("lizardfolk_gang");
-	else if (nRoll <= 48) ACR_SpawnGroup("orc_gang");
+	if (nRoll <= 4) ACR_SpawnGroup("alfa_dire_rats");
+	else if (nRoll <= 8) ACR_SpawnGroup("alfa_fire_beetle_cluster");
+	else if (nRoll <= 12) ACR_SpawnGroup("alfa_spider_colony_small");
+	else if (nRoll <= 16) ACR_SpawnGroup("alfa_dwarf_team");
+	else if (nRoll <= 20) ACR_SpawnGroup("alfa_elf_squad");
+	else if (nRoll <= 24) ACR_SpawnGroup("alfa_goblin_gang");
+	else if (nRoll <= 28) ACR_SpawnGroup("alfa_kobold_gang");
+	else if (nRoll <= 32) ACR_SpawnGroup("alfa_skeletons");
+	else if (nRoll <= 36) ACR_SpawnGroup("alfa_zombies");
+	else if (nRoll <= 40) ACR_SpawnGroup("alfa_hobgoblin_gang");
+	else if (nRoll <= 44) ACR_SpawnGroup("alfa_lizardfolk_gang");
+	else if (nRoll <= 48) ACR_SpawnGroup("alfa_orc_gang");
 	else if (nRoll <= 52) ACR_SpawnObject("abr_cr_un_baneguard", OBJECT_TYPE_CREATURE);
-	else if (nRoll <= 56) ACR_SpawnGroup("ghoul_gang");
+	else if (nRoll <= 56) ACR_SpawnGroup("alfa_ghoul_gang");
 	else if (nRoll <= 60) ACR_SpawnObject("abr_cr_un_shadow", OBJECT_TYPE_CREATURE);
-	else if (nRoll <= 64) ACR_SpawnGroup("gnolls");
+	else if (nRoll <= 64) ACR_SpawnGroup("alfa_gnolls");
 	else if (nRoll <= 68) ACR_SpawnObject("abr_cr_ve_spider_large", OBJECT_TYPE_CREATURE);
 	else if (nRoll <= 72) ACR_SpawnObject("abr_cr_un_zombie_tyrantfog", OBJECT_TYPE_CREATURE);
 	else if (nRoll <= 78) ACR_SpawnObject("abr_cr_oo_gelatinouscube", OBJECT_TYPE_CREATURE);
-	else if (nRoll <= 84) ACR_SpawnGroup("imps");
-	else if (nRoll <= 90) ACR_SpawnGroup("bombardier_beetles");
-	else if (nRoll <= 95) ACR_SpawnGroup("dire_badgers");
+	else if (nRoll <= 84) ACR_SpawnGroup("alfa_imps");
+	else if (nRoll <= 90) ACR_SpawnGroup("alfa_bombardier_beetles");
+	else if (nRoll <= 95) ACR_SpawnGroup("alfa_dire_badgers");
 	else ACR_SpawnObject("abr_cr_mh_quaggoth", OBJECT_TYPE_CREATURE);
 		
 }
