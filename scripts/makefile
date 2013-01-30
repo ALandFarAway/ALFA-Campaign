@@ -14,6 +14,8 @@ NSS_OBJECTS=                                                   \
             $(OUTPUTDIR)\abr_cre_onphysically_kuotoa.ncs       \
             $(OUTPUTDIR)\abr_cre_onspawnin_kuotoa.ncs          \
             $(OUTPUTDIR)\abr_it_hex_blndfld_ay.ncs             \
+            $(OUTPUTDIR)\abr_tcircle_ondisarmed.ncs            \
+            $(OUTPUTDIR)\abr_tcircle_onenter.ncs               \
             $(OUTPUTDIR)\acf_cre_os_annis.ncs                  \
             $(OUTPUTDIR)\acf_cre_os_shadow.ncs                 \
             $(OUTPUTDIR)\acf_cre_os_shadowmastiff.ncs          \
