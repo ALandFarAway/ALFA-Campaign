@@ -1,0 +1,16 @@
+#
+# This file lists directories to recurse into.
+#
+
+DIRS=                               \
+     core                           \
+     creatures                      \
+     doors                          \
+     items                          \
+     placeables                     \
+     scripts                        \
+     triggers                       \
+     waypoints                      
+
+BROKEN=                             \
+

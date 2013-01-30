@@ -1,4 +1,0 @@
-echo "Usage: findDuplicates [path to module]"
-echo "For example: findDuplicates ../../modules/alfa010_bg_live"
-echo
-for file in * ; do [ -f $1/$file ] && echo $file ; done
