@@ -17,6 +17,7 @@ NSS_OBJECTS=                                                   \
             $(OUTPUTDIR)\abr_it_hex_blndfld_ay.ncs             \
             $(OUTPUTDIR)\abr_tcircle_ondisarmed.ncs            \
             $(OUTPUTDIR)\abr_tcircle_onenter.ncs               \
+            $(OUTPUTDIR)\acf_cre_od_fleshgolem.ncs             \
             $(OUTPUTDIR)\acf_cre_oh_fleshgolem.ncs             \
             $(OUTPUTDIR)\acf_cre_os_annis.ncs                  \
             $(OUTPUTDIR)\acf_cre_os_shadow.ncs                 \
