@@ -63,6 +63,15 @@ void SetGolemIsBerserk( object oCreature, int bValue ) {
 	if ( bValue < 0 ) bValue = 0;
 	if ( bValue > 1 ) bValue = 1;
 	SetLocalInt( oCreature, LVAR_IS_BERSERK, bValue );
+	
+	// If we're turning berserk, attack the nearest thing.
+	if ( bValue == TRUE ) {
+		AssignCommand( oCreature, ClearAllActions() );
+		object oTarget = GetNearestCreature( CREATURE_TYPE_PERCEPTION, PERCEPTION_SEEN_AND_HEARD, oCreature );
+		SetIsTemporaryEnemy( oTarget, oCreature );
+		SetIsTemporaryEnemy( oCreature, oTarget );
+		AssignCommand( oCreature, ActionAttack( oTarget ) );
+	}
 }
 
 int GetGolemCanRegainControl( object oCreature ) {
