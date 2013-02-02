@@ -38,9 +38,13 @@
 void main() {
     ACR_CreatureOnDamaged();
 	
+	// Get our creatures.
+	object oDamager = GetLastDamager();
+	object oGolem = OBJECT_SELF;
+	
     // If it's set to go hostile on attack, do so.
-	if ( GetLocalInt( OBJECT_SELF, "ACR_MAKE_HOSTILE" ) ) {
-		ChangeToStandardFaction(OBJECT_SELF,STANDARD_FACTION_HOSTILE);
+	if ( GetLocalInt( oGolem, "ACR_MAKE_HOSTILE" ) ) {
+		ChangeToStandardFaction(oGolem,STANDARD_FACTION_HOSTILE);
 	}
 	
 	// A magical attack that deals cold or fire damage slows a flesh golem (as
@@ -49,7 +53,8 @@ void main() {
 	int nFireDamage = GetDamageDealtByType( DAMAGE_TYPE_FIRE );
 	if ( nColdDamage > 0 || nFireDamage > 0 ) {
 		int nRounds = Random(6)+1 + Random(6)+1; 
-		ApplyEffectToObject( DURATION_TYPE_TEMPORARY, EffectSlow(), OBJECT_SELF, RoundsToSeconds( nRounds ) );
+		ApplyEffectToObject( DURATION_TYPE_TEMPORARY, EffectSlow(), oGolem, RoundsToSeconds( nRounds ) );
+		FloatingTextStringOnCreature( "*The construct slows.*", oGolem, FALSE );
 	}
 	
 	// A magical attack that deals electricity damage breaks any slow effect on
@@ -61,28 +66,25 @@ void main() {
 	if ( nElectricDamage > 0 ) {
 		// First, heal up all the damage done via electricity. Flesh golems are
 		// immune to this damage type.
-		ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectHeal( nElectricDamage ), OBJECT_SELF );
+		ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectHeal( nElectricDamage ), oGolem );
+		FloatingTextStringOnCreature( "*Its wounds magical begin closing.*", oGolem, FALSE );
 		
 		// Also, remove any slowing if it has any.
-		RemoveEffect( OBJECT_SELF, EffectSlow() );
+		RemoveEffect( oGolem, EffectSlow() );
 		
 		// Are we giving a bonus?
-		int nBonus = nElectricDamage / 3;
-		if ( nBonus < 1 ) return;
-		
-		// Next we determine how much damage we've taken.
-		int nDamageTaken = GetMaxHitPoints() - GetCurrentHitPoints();
-		
-		// Then we determine how much we heal, and how much we give as temporary HP.
-		int nHealed = nBonus;
-		int nTempHP = 0;
-		if ( nHealed > nDamageTaken ) {
-			nTempHP = nHealed - nBonus;
-			nHealed = nBonus;
-		}
+		int nHealAmount = nElectricDamage / 3;
+		if ( nHealAmount < 1 ) return;
 		
 		// Finally apply our effects.
-		ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectHeal( nHealed ), OBJECT_SELF );
-		ApplyEffectToObject( DURATION_TYPE_PERMANENT, EffectTemporaryHitpoints( nTempHP ), OBJECT_SELF );
+		ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectHeal( nHealAmount ), oGolem );
+	}
+	
+	// Because we need to have this creature be Immortal for our electricity damage handling to work,
+	// we now want to see if this creature should now be dead. For now we just assume that 1hp=dead.
+	// To suppliment this we add 1 to the creature's maximum life.
+	if ( GetCurrentHitPoints() == 1 ) {
+		SetImmortal( oGolem, FALSE );
+		AssignCommand( oDamager, ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectDeath(), oGolem ) );
 	}
 }
