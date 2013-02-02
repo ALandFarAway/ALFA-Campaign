@@ -19,6 +19,8 @@
 // Constants ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
+const string LVAR_LAST_HEALTH = "golem_last_health";
+
 ////////////////////////////////////////////////////////////////////////////////
 // Structures //////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -53,7 +55,8 @@ void main() {
 	int nFireDamage = GetDamageDealtByType( DAMAGE_TYPE_FIRE );
 	if ( nColdDamage > 0 || nFireDamage > 0 ) {
 		int nRounds = Random(6)+1 + Random(6)+1; 
-		ApplyEffectToObject( DURATION_TYPE_TEMPORARY, EffectSlow(), oGolem, RoundsToSeconds( nRounds ) );
+		effect eSlow = EffectLinkEffects( EffectSlow(), EffectVisualEffect( VFX_DUR_SPELL_SLOW ) );
+		ApplyEffectToObject( DURATION_TYPE_TEMPORARY, eSlow, oGolem, RoundsToSeconds( nRounds ) );
 		FloatingTextStringOnCreature( "*The construct slows.*", oGolem, FALSE );
 	}
 	
@@ -64,19 +67,28 @@ void main() {
 	// temporary hit points.
 	int nElectricDamage = GetDamageDealtByType( DAMAGE_TYPE_ELECTRICAL );
 	if ( nElectricDamage > 0 ) {
-		// First, heal up all the damage done via electricity. Flesh golems are
-		// immune to this damage type.
-		ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectHeal( nElectricDamage ), oGolem );
+		// How much we're healing based on the electrical damage.
+		int nHealAmount = nElectricDamage;
+		
+		// Report to the damager (and those around) that the golem shrugs off electrical damage.
+		SendMessageToPC( oDamager, "The creature resists " + IntToString( nElectricDamage ) + " electrical damage!" );
 		FloatingTextStringOnCreature( "*Its wounds magical begin closing.*", oGolem, FALSE );
 		
-		// Also, remove any slowing if it has any.
+		// Remove any slowing if it has any.
+		ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectVisualEffect( VFX_DUR_FREEDOM_OF_MOVEMENT ), oGolem );
 		RemoveEffect( oGolem, EffectSlow() );
 		
-		// Are we giving a bonus?
-		int nHealAmount = nElectricDamage / 3;
-		if ( nHealAmount < 1 ) return;
+		// Limit the amount healed by electrical damage by its previous health.
+		int nPreviousHealth = GetLocalInt( oGolem, LVAR_LAST_HEALTH );
+		if ( nHealAmount > nPreviousHealth ) {
+			nHealAmount = nPreviousHealth - GetTotalDamageDealt() + nElectricDamage;
+		}
 		
-		// Finally apply our effects.
+		// We also toss on some extra healing with this damage type.
+		nHealAmount += nElectricDamage / 3;
+		
+		// Now we finally do the healing.
+		ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectVisualEffect( VFX_HIT_SPELL_HEALING_STING ), oGolem );
 		ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectHeal( nHealAmount ), oGolem );
 	}
 	
@@ -86,5 +98,9 @@ void main() {
 	if ( GetCurrentHitPoints() == 1 ) {
 		SetImmortal( oGolem, FALSE );
 		AssignCommand( oDamager, ApplyEffectToObject( DURATION_TYPE_INSTANT, EffectDeath(), oGolem ) );
+		return;
 	}
+	
+	// Store the current health for the next script itteration.
+	SetLocalInt( oGolem, LVAR_LAST_HEALTH, GetCurrentHitPoints() );
 }
