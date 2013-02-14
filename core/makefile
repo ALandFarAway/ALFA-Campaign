@@ -8,8 +8,10 @@ all:
 	@copy /y Campaign.cam $(OUTPUTDIR)\ >NUL
 	@copy /y campaigndownloaderresources.xml $(OUTPUTDIR)\ >NUL
 	@copy /y module.jrl $(OUTPUTDIR)\ >NUL
+	@copy /y REPUTE.FAC $(OUTPUTDIR)\ >NUL
 
 clean:
 	@if exist $(OUTPUTDIR)\Campaign.cam del $(OUTPUTDIR)\Campaign.cam
 	@if exist $(OUTPUTDIR)\campaigndownloaderresources.xml del $(OUTPUTDIR)\campaigndownloaderresources.xml
 	@if exist $(OUTPUTDIR)\module.jrl del $(OUTPUTDIR)\module.jrl
+	@if exist $(OUTPUTDIR)\REPUTE.FAC del $(OUTPUTDIR)\REPUTE.FAC
