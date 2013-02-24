@@ -18,7 +18,9 @@ NSS_OBJECTS=                                                   \
             $(OUTPUTDIR)\abr_tcircle_ondisarmed.ncs            \
             $(OUTPUTDIR)\abr_tcircle_onenter.ncs               \
             $(OUTPUTDIR)\acf_cre_od_fleshgolem.ncs             \
+            $(OUTPUTDIR)\acf_cre_od_troll.ncs                  \
             $(OUTPUTDIR)\acf_cre_oh_fleshgolem.ncs             \
+            $(OUTPUTDIR)\acf_cre_oh_troll.ncs                  \
             $(OUTPUTDIR)\acf_cre_os_annis.ncs                  \
             $(OUTPUTDIR)\acf_cre_os_shadow.ncs                 \
             $(OUTPUTDIR)\acf_cre_os_shadowmastiff.ncs          \
