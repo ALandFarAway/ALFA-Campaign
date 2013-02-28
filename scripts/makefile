@@ -24,6 +24,14 @@ NSS_OBJECTS=                                                   \
             $(OUTPUTDIR)\acf_cre_os_annis.ncs                  \
             $(OUTPUTDIR)\acf_cre_os_shadow.ncs                 \
             $(OUTPUTDIR)\acf_cre_os_shadowmastiff.ncs          \
+            $(OUTPUTDIR)\acf_cre_psn_wyvern.ncs                \
+            $(OUTPUTDIR)\acr_quest_check_global.ncs            \
+            $(OUTPUTDIR)\acr_quest_check_global_e.ncs          \
+            $(OUTPUTDIR)\acr_quest_check_global_gt.ncs         \
+            $(OUTPUTDIR)\acr_quest_check_global_gte.ncs        \
+            $(OUTPUTDIR)\acr_quest_check_global_lt.ncs         \
+            $(OUTPUTDIR)\acr_quest_check_global_lte.ncs        \
+            $(OUTPUTDIR)\acr_quest_check_global_ne.ncs         \
             $(OUTPUTDIR)\as_group_alfa_abishais_black.ncs      \
             $(OUTPUTDIR)\as_group_alfa_abishais_blue.ncs       \
             $(OUTPUTDIR)\as_group_alfa_abishais_green.ncs      \
