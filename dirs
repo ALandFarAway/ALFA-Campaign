@@ -6,9 +6,11 @@ DIRS=                               \
      core                           \
      creatures                      \
      doors                          \
+     effects                        \
      items                          \
      placeables                     \
      scripts                        \
+     terrain_bmp                    \
      triggers                       \
      waypoints                      
 
