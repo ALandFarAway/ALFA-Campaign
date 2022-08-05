@@ -5,6 +5,7 @@
 DIRS=                               \
      core                           \
      creatures                      \
+     dialog                         \
      doors                          \
      effects                        \
      items                          \
